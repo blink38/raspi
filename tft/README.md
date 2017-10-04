@@ -8,6 +8,8 @@ sources :
 
 (from https://www.xgadget.de/anleitung/2-2-spi-display-ili9341-am-raspberry-betreiben/)
 
+## Install TFT Display
+
 enable SPI
 ```
 $ raspi-config
@@ -33,4 +35,13 @@ $ con2fbmap 1 1
 stop sending console 
 ```
 $ con2fbmap 1 0
+```
+
+## TFT Display brightness
+
+```
+gpio -g mode 18 pwm
+gpio -g pwm 18 1024
+gpio -g pwm 18 222
+gpio -g pwm 18 700
 ```
